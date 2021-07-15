@@ -1,0 +1,12 @@
+.dropdown-menu.menu-header {
+    right: 0 !important;
+    margin: 20px 15px !important;
+    top: 50px !important;
+    left: auto !important;
+    z-index: 300 !important;
+    transform: none !important;
+  }
+  
+.container-admin {
+    margin: -15px !important;
+}

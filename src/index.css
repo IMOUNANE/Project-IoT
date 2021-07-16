@@ -294,6 +294,7 @@ nav .active {
   color: #4BA46D;
 }
 
+
 .sub_active {
   background-color: red;
   color: white !important;
@@ -424,14 +425,11 @@ main {
     width: 100%;
   }
 
-  .cv_illustration {
-    width: 20%;
-    margin-left: 40%;
-  }
-
   header {
     flex-direction: column;
     height: auto;
+    background-color: #3D3D3D;
+
   }
 
   #menu {
@@ -446,9 +444,6 @@ main {
 }
 
 @media (max-width: 768px) {
-  .listOfStudent form div {
-    flex-direction: column;
-  }
 
   thead {
     display: none;
@@ -489,7 +484,19 @@ main {
   .profile_nav_button a:nth-child(2) button {
     border-radius: 0 0 0 0;
   }
-
+  header .avatarContainer {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  header .avatarContainer img {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
   .avatarField {
     max-width: 90%;
     margin-left: 5%;

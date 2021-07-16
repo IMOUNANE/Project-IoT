@@ -37,27 +37,33 @@ import {
                 {/* Est-ce que l'utilisateur a été trouvé ? Si oui, on affiche son avatar, sinon on affiche le Skeleton Loader */}
 
                 <span className="avatarContainer cursor-pointer">
-                    <span>
+                    <span className="show">
                     <a
                         data-toggle="dropdown"
                         aria-haspopup="true"
                         aria-expanded="false"
-                        className="avatarContainer"
+                        className="avatarContainer cursor-pointer"
                     >
-                        <FontAwesomeIcon icon={faBell} color="black" size="2x"/>
+                        <img
+                            src="/logo192.png"
+                            alt="profil"
+                            width="50"
+                            height="50"
+                        />
+                        
                     </a>
                     <div
                         className="dropdown-menu menu-header mt-4 mr-3 p-0"
                         id="dropdown"
                         aria-labelledby="dropdownMenuButton"
                     >
-                        <NavLink to="/parameters" className="dropdown-item p-2 pl-4">
-                        <FontAwesomeIcon icon={faCog} />
-                        Paramètres
+                        <NavLink to="#" className="dropdown-item p-2 pl-4">
+                            <FontAwesomeIcon icon={faCog} />
+                            Paramètres
                         </NavLink>
-                        <NavLink to="/logout" className="dropdown-item p-2 pl-4">
-                        <FontAwesomeIcon icon={faSignOutAlt} />
-                        Déconnexion
+                        <NavLink to="/" className="dropdown-item p-2 pl-4">
+                            <FontAwesomeIcon icon={faSignOutAlt} />
+                            Déconnexion
                         </NavLink>
                     </div>
                     </span>

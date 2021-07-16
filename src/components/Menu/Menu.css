@@ -1,5 +1,24 @@
-
 .link-menu{
   padding: 12.5px 40px 12.5px 40px;
 }
-  
+.sub-link.active .subMenu {
+  transition: 0.2s;
+  color: rgba(129, 173, 227, 1) !important;
+  border-color: rgba(129, 173, 227, 1) !important;
+  background: #003962 !important;
+}
+
+.sub-link.active {
+  transition: 0.2s;
+  background: #003962 !important;
+}
+
+.sub-link.active:hover {
+  transition: 0.2s;
+  background: #002851 !important;
+}
+
+.sub-link.active:hover .subMenu {
+  transition: 0.2s;
+  background: #002851 !important;
+}

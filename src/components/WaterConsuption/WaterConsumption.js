@@ -1,79 +1,57 @@
 //Import lié à react 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./WaterConsumption.css"
-import { Line } from 'react-chartjs-2';
-import Chart from "chart.js";
-import axios from "axios";
-import { Button } from '@material-ui/core';
+import {Doughnut} from 'react-chartjs-2';
+import { Card} from '@material-ui/core';
+import {Donuts,WaterStat} from "./LittleComponent";
+import goute from "../../Image/goute.png"
 export default function WaterConsumption(props){
     const {title,className}=props;
-    const [chartData, setChartData] = useState({});
-    const [employeeSalary, setEmployeeSalary] = useState([]);
-    const [employeeAge, setEmployeeAge] = useState([]);
-
-  const chart = () => {
-    let empSal = [];
-    let empAge = [];
-    axios
-      .get("http://dummy.restapiexample.com/api/v1/employees")
-      .then(res => {
-        console.log(res);
-        for (const dataObj of res.data.data) {
-          empSal.push(parseInt(dataObj.employee_salary));
-          empAge.push(parseInt(dataObj.employee_age));
-        }
-        setChartData({
-          labels: empAge,
-          datasets: [
-            {
-              label: "level of thiccness",
-              data: empSal,
-              backgroundColor: ["rgba(75, 192, 192, 0.6)"],
-              borderWidth: 4
-            }
-          ]
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    console.log(empSal, empAge);
-  };
-
-
     
+
  return(
-    <section id="WaterConsumption" className={className}>
+    <Card id="WaterConsumption" className={className}>
         <div className="p-5">
             <h3>{title}</h3>
-            <Line 
-                data={chartData}
-                options={{
-                    responsive:true,
-                    title:{text:"test chartjs",display:true},
-                    scales:{
-                        yAxes:[
-                            {
-                                ticks:{
-                                    autoSkip:true,
-                                    maxTicksLimit:10,
-                                    beginAtZero:true,
-                                },
-                                gridLines:{
-                                    display:false,
-                                }
-                            }
+            <div className="stat-water-comsumption d-flex justify-content-between">
+              <div className="col-md-5">
+                <Doughnut
+                  data={{
+                    labels:['Eau de Pluie','Eau Potable'],
+                    datasets:[
+                      {
+                        label:'# of votes',
+                        data:[45,55],
+                        backgroundColor: [
+                          'rgba(61, 200, 230, 1)',
+                          'rgba(20, 103, 162, 1)',
                         ],
-                        xAxes:[{
-                            gridLines:{
-                                display:false
-                            }
-                        }]
-                    }
-                }}
-             />
-            <Button onClick={()=>chart()}>Afficher les données</Button> 
+                      }
+                    ]
+                  }}
+                />
+              </div>
+             
+              <div className="title col-md-5 mt-4">
+                  <div className="d-flex flex-wrap">
+                    <div className="col-md-12 d-flex justify-content-between my-3">
+                      <Donuts className="col-md-3" color="#3DC8E6"/>
+                      <label className="col-md-9">Eau de pluie</label>
+                    </div>
+                    <div className="col-md-12 d-flex justify-content-between my-3">
+                      <Donuts className="col-md-3" color="#1467A2"/>
+                      <label className="col-md-9">Eau potable</label>
+                    </div>
+                  </div>
+              </div> 
+            </div>
+            <div className="details d-flex flex-wrap justify-content-between my-5">
+                <WaterStat title={"Economie"} color="#2AAF42" illustration={goute}/>
+                <WaterStat title={"Eau de Pluie"} color="#3DC8E6"/>
+                <WaterStat title={"Eau portable"} color="#1467A2"/>
+            </div>
+            
         </div>
-    </section>
+    </Card>
  )
 }

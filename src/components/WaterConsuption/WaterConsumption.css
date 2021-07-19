@@ -1,3 +1,20 @@
 #WaterConsumption{
     background-color: white;
 }
+.doughnut-color { 
+    background: white;
+    display: block;
+    width: 25px;
+    height: 25px;
+    position:relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+}
+.water-stat-title{
+    top:29px;
+    position:relative;
+    color:white;
+    font-size: 18px;
+}

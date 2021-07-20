@@ -9,6 +9,7 @@ import notif from  "../../Image/notif.png"
 
 import WaterConsumption from "../WaterConsuption/WaterConsumption";
 import ComponentDefault from "../ComponentDefault/ComponentDefault";
+import WaterTank from "../WaterTank/WaterTank";
 
 
 
@@ -29,10 +30,9 @@ export default function Dashboard(){
                     illustration={notif}
                   
                 />
-                <ComponentDefault 
-                    title="Réservoir d'eau de pluie" 
-                    className="col-md-6 my-5"
-                />
+                <WaterTank title="Réservoir d'eau de pluie" 
+                    className="col-md-6 my-5"percent={50}/>
+                    
                 <ComponentDefault 
                     title="Qualité de l'eau" 
                     className="col-md-5 my-5"

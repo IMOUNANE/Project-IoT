@@ -10,7 +10,7 @@ export  function WaterStat(props){
     }
     return(
         <div>
-            <div className="d-flex flex-wrap justify-content-center p-3" style={style}>
+            <div className="d-flex flex-wrap justify-content-center p-3 my-3" style={style}>
                 <div className=" water-stat-title align-items-center col-md-12">
                     <h5 className="m-0">{title}</h5>
                 </div>

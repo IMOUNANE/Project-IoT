@@ -45,7 +45,7 @@ export default function WaterConsumption(props){
                   </div>
               </div> 
             </div>
-            <div className="details d-flex flex-wrap justify-content-between my-5">
+            <div className="details d-flex flex-wrap justify-content-between my-2">
                 <WaterStat title={"Economie"} color="#2AAF42" illustration={goute} subTitle={[{text:"2,5T"}, {text:"2,5€"}]}/>
                 <WaterStat title={"Eau de Pluie"} color="#3DC8E6" subTitle={[{text:"500L"}]}/>
                 <WaterStat title={"Eau portable"} color="#1467A2" subTitle={[{text:"2,2T"}]}/>

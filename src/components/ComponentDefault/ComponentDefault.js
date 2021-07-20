@@ -4,10 +4,7 @@ import { Card } from '@material-ui/core';
 
 export default function ComponentDefault(props){
     const {title,className,illustration}=props;
-    console.log(illustration)
 
-    
-    
  return(
     <Card id="ComponentDefault" className={className}>
         <div className="p-5">
@@ -15,7 +12,6 @@ export default function ComponentDefault(props){
             <div className="p-5">
                 {illustration ? <img src={illustration}/>:""}
             </div>
-            
         </div>
     </Card>
  )

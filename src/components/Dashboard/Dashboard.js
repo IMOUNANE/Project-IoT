@@ -1,5 +1,5 @@
 //Import lié à react 
-import React from "react"
+import React, { useEffect } from "react"
 // STYLESHEET
 import "./Dashboard.css";
 
@@ -10,10 +10,17 @@ import notif from  "../../Image/notif.png"
 import WaterConsumption from "../WaterConsuption/WaterConsumption";
 import ComponentDefault from "../ComponentDefault/ComponentDefault";
 import WaterTank from "../WaterTank/WaterTank";
-
-
+import LevelWaterTank from "../../services/route/LevelWaterTank";
 
 export default function Dashboard(){
+   /* axios.get("http://193.70.84.157:3490/getFieldByTime/112").then((response)=>{
+    let res=response.data[0];    
+    const result=res.map((data)=> data._value)
+    console.log(result)
+    })*/
+    const [waterLevel]=LevelWaterTank();
+    console.log(waterLevel)
+  
 
  return(
     <main className="dashboard">
@@ -31,7 +38,7 @@ export default function Dashboard(){
                   
                 />
                 <WaterTank title="Réservoir d'eau de pluie" 
-                    className="col-md-6 my-5"percent={50}/>
+                    className="col-md-6 my-5" percent={waterLevel}/>
                     
                 <ComponentDefault 
                     title="Qualité de l'eau" 

@@ -26,19 +26,29 @@ export default function WaterTank(props){
 
     useEffect(()=>{
         renderImg(percent)
-    },[percent])
+    },[percent,setCurrentPercent])
 
     const renderImg=(percent)=>{
         let i = 0;
-        const stopwatch = Number(Math.floor(percent))
+        const stopwatch = Number(Math.floor(percent/10)*10)
         const animation = setInterval(()=>{
+            
             let currentIndex=Number(i.toString().split("")[0]);
+    
+            
             if(i===100) currentIndex = 10; 
-            if(stopwatch===i) clearInterval(animation);
+            if(stopwatch===i){
+                clearInterval(animation);
+                setCurrentPercent(percent)
+                console.log(percent)
+                console.log(currentPercent)
+            }
             $("#waterTank").attr("src",tankImages[currentIndex]);
+            $("#waterTank").css("transition","0.5s")
             setCurrentPercent(i)
             i+=10;
-        },1000)
+        },400)
+        
     }
     
    

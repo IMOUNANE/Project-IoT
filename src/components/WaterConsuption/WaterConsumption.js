@@ -27,7 +27,9 @@ export default function WaterConsumption(props){
                           'rgba(20, 103, 162, 1)',
                         ],
                       }
-                    ]
+                    ],
+                    
+                    
                   }}
                 />
               </div>

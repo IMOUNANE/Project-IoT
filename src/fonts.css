@@ -1,0 +1,33 @@
+/**
+ * Avenir
+ */
+ @font-face {
+    font-weight: 300;
+    font-family: 'AvenirRoman';
+    src: url('./assets/fonts/AvenirLTStd-Roman.otf');
+  }
+  
+  @font-face {
+    font-weight: normal;
+    font-family: 'AvenirBook';
+    src: url('./assets/fonts/AvenirLTStd-Book.otf');
+  }
+  
+  @font-face {
+    font-weight: 500;
+    font-family: 'AvenirMedium';
+    src: url('./assets/fonts/AvenirLTStd-Medium.otf');
+  }
+  
+  @font-face {
+    font-weight: 600;
+    font-family: 'AvenirHeavy';
+    src: url('./assets/fonts/AvenirLTStd-Heavy.otf');
+  }
+  
+  @font-face {
+    font-weight: bold;
+    font-family: 'AvenirBold';
+    src: url('./assets/fonts/AvenirLTStd-Heavy.otf');
+  }
+  

@@ -1,27 +1,32 @@
 #WaterConsumption{
     background-color: white;
 }
-.doughnut-color { 
-    background: white;
-    display: block;
-    width: 25px;
-    height: 25px;
-    position:relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 100%;
-}
-.water-stat-title{
-    height: 20px;
-}
+
 .water-stat-title h5{
-    position:relative;
     color:white;
     font-size: 18px;
     text-align: center;
-    height: 100%;
 }
+
 .subtitle-color{
     color:white;
+}
+
+.water {
+    width: 30px;
+    height: 12px;
+    margin-right: 8px;
+}
+
+.rainwater {
+    background-color: #3DC8E6;
+}
+
+.potablewater {
+    background-color: #1467A2;
+}
+
+.description {
+    margin-bottom: 0;
+    font-size: 16px;
 }

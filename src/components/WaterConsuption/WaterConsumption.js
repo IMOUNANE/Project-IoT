@@ -6,25 +6,18 @@ import { Card} from '@material-ui/core';
 import {WaterStat} from "./LittleComponent";
 import goute from "../../assets/IMG/goute.png"
 import HeaderCard from "../HeaderCard/HeaderCard";
-import * as axios from "axios";
 
 export default function WaterConsumption(props) {
 
-
-  axios.get("http://193.70.84.157:3490/getFieldByTime/112").then(response => {
-   console.log(response);
-  })
-
-
     return(
-      <Card id="WaterConsumption" className="mt-3 p-3 card">
+      <Card id="WaterConsumption" className="m-3 p-3 card">
         <HeaderCard
           title="Consommation d'eau"
           subtitle="Details"
         />
         
           <div className="p-3">
-            <div className="stat-water-comsumption d-flex justify-content-around align-items-center">
+            <div className="stat-water-comsumption d-flex justify-content-around align-items-center p-3">
               <div className="col-md-4 mb-4">
                 <Doughnut
                   data={{
@@ -58,7 +51,7 @@ export default function WaterConsumption(props) {
             <div className="title col-md-5 mt-4">
           </div> 
                 
-          <div className="details d-flex flex-wrap">
+          <div className="details d-flex flex-wrap justify-content-between">
             <WaterStat title={"Economie"} color="#2AAF42" illustration={goute} subTitle={[{text:"2,5T"}, {text:"2,5€"}]}/>
             <WaterStat title={"Eau de Pluie"} color="#3DC8E6" subTitle={[{text:"500L"}]}/>
             <WaterStat title={"Eau portable"} color="#1467A2" subTitle={[{text:"2,2T"}]}/>

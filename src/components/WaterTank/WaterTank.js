@@ -1,6 +1,8 @@
 //Import lié à react 
 import React,{useEffect,useState} from "react";
 import { Card } from '@material-ui/core';
+import "./WaterTank.css"
+import HeaderCard from "../HeaderCard/HeaderCard";
 import water_0 from "../../assets/IMG/water_0.png";
 import water_10 from "../../assets/IMG/water_10.png";
 import water_20 from "../../assets/IMG/water_20.png";
@@ -15,13 +17,13 @@ import water_100 from "../../assets/IMG/water_100.png";
 import $ from "jquery"
 
 export default function WaterTank(props){
-    const {percent, title, className}=props;
+    const {percent}=props;
     const [currentPercent,setCurrentPercent] = useState(0)
     const tankImages=[water_0,water_10,water_20,water_30,water_40,water_50,water_60,water_70,water_80,water_90,water_100]
     const data = [
-        {text:"Capacité",value:"20T"},
-        {text:"Capacité",value:"230T"},
-        {text:"Capacité",value:"30T"}
+        {text:"Capacité",value:"30T"},
+        {text:"Remplissage",value:"20T"},
+        {text:"Capacité restante",value:"10T"}
     ];
 
     useEffect(()=>{
@@ -53,20 +55,23 @@ export default function WaterTank(props){
     
    
  return(     
-    <Card  className={className}>
+    <Card  className="m-3 p-3 card">
+        <HeaderCard
+            title="Reservoir d'eau de pluie"
+            subtitle="Details"
+        />
         <div className="p-5">
-        <h3>{title}</h3>
-            
+           
             <div className="d-flex flex-wrap justify-content-center my-5">
-                <div className="col-xl-6 col-lg-12 my-3">
+                <div className="col-xl-6 col-lg-12 my-3 waterTank-container">
                     <img id="waterTank" src={water_0}/>
-                    <p>{currentPercent+"%"}</p>
+                    <p className="percent">{currentPercent+"%"}</p>
                 </div>
-                <div className="col-xl-6 col-lg-12 my-3">
+                <div className="col-xl-6 col-lg-12 p-3">
                   {data.map((content)=>{
                       return(
                         <div className="d-flex justify-content-between">
-                            <h5>{content.text}</h5>
+                            <p className="content-text" >{content.text}</p>
                             <p>{content.value}</p>
                         </div>
                       )

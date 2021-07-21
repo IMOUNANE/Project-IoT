@@ -10,14 +10,11 @@ import notif from  "../../assets/IMG/notif.png"
 import WaterConsumption from "../WaterConsuption/WaterConsumption";
 import ComponentDefault from "../ComponentDefault/ComponentDefault";
 import WaterTank from "../WaterTank/WaterTank";
-<<<<<<< HEAD
 import LevelWaterTank from "../../services/route/LevelWaterTank";
-=======
 import Notification from "../Notification/Notification";
 
 
 
->>>>>>> add notification component and update css files
 
 export default function Dashboard(){
    /* axios.get("http://193.70.84.157:3490/getFieldByTime/112").then((response)=>{
@@ -32,16 +29,15 @@ export default function Dashboard(){
  return(
     <main className="dashboard">
         <div className="p-3">
-            <div id="dashbord-body" className="d-flex flex-wrap justify-content-around px-sm-0">
+            <div id="dashbord-body" className="d-flex flex-wrap justify-content-between px-sm-0">
                 <WaterConsumption 
-                    title="Consommation d'eau"
                 />
                 <Notification 
                     number="1" 
                     cause="Qualité de l'eau mauvaise"
                 />
-                <WaterTank title="Réservoir d'eau de pluie" 
-                    className="col-md-6 my-5" percent={waterLevel}/>
+                <WaterTank 
+                    percent={waterLevel}/>
                     
                 <ComponentDefault 
                     title="Qualité de l'eau" 

@@ -8,7 +8,7 @@ export default function Noctification(props) {
     const{number, cause} =props
     
     return(
-        <Card className="mt-3 p-3 card">
+        <Card className="m-3 p-3 card">
             <HeaderCard
                 title="Notifications"
                 subtitle="Details"
@@ -18,7 +18,7 @@ export default function Noctification(props) {
                 <div className="d-flex justify-content-between flex-column description-container">
                     <div className="d-flex align-items-center">
                         <span className="anomaly-number">{number}</span>
-                        <p className="m-0">Anomalie(s)</p>
+                        <p className="m-0 anomaly">Anomalie(s)</p>
                     </div>
                     <div>{cause}</div>
                 </div>

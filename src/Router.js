@@ -5,7 +5,6 @@ import {Route, Switch, BrowserRouter} from "react-router-dom";
 import Header from "./components/Header/Header";
 import Menu from "./components/Menu/Menu";
 import Dashboard from "./components/Dashboard/Dashboard";
-import PageTest from "./components/PageTest/PageTest";
 
 
 function Router() {
@@ -23,16 +22,6 @@ function Router() {
         <Route
           exact
           path="/"
-          render={()=>(
-            <div>
-              {template()}
-              <PageTest/>
-            </div>
-          )}
-        />
-        <Route
-          exact
-          path="/dashboard"
           render={()=>(
             <div>
               {template()}

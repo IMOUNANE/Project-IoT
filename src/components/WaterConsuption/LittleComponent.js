@@ -1,18 +1,19 @@
-import "./WaterConsumption.css"
+import "./WaterConsumption.css";
+
 
 export  function WaterStat(props){
     const {color, title, illustration, subTitle } = props;
     const style={
         "background-color": color,
         "border-radius": "25%",
-        "width": "136px",
-        "height": "136px",
+        "height": "128px",
+        "width": "148px"
     }
     return(
         <div>
-            <div className="d-flex flex-wrap justify-content-center p-3 my-3" style={style}>
+            <div className="d-flex flex-wrap justify-content-center p-3 m-2" style={style}>
                 <div className=" water-stat-title align-items-center col-md-12">
-                    <h5 className="m-0">{title}</h5>
+                    <h5 className="mt-2">{title}</h5>
                 </div>
              
                 <div className="d-flex flex-wrap col-md-12 justify-content-center"  >

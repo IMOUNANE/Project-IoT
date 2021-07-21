@@ -1,12 +1,18 @@
-.dropdown-menu {
+/* .dropdown-menu {
   right: 0 !important;
   margin-top: 200px !important;
   top: 50px !important;
   left: auto !important;
   z-index: 300 !important;
   transform: none !important;
-}
+} */
 
-.container-admin {
+/* .container-admin {
   margin: -15px !important;
+} */
+
+.title {
+  font-size: 22px;
+  margin-bottom: 0;
+  font-family: "AvenirBook";
 }

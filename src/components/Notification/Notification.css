@@ -1,0 +1,20 @@
+.notification-container {
+    height: 60%;
+}
+
+.description-container {
+    height: 60px;
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+.anomaly-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: #F89751;
+    margin-right: 12px;
+}
+
+.anomaly {
+    font-size: 22px;
+}

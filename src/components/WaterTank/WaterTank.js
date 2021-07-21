@@ -34,26 +34,24 @@ export default function WaterTank(props){
         let i = 0;
         const stopwatch = Number(Math.floor(percent/10)*10)
         const animation = setInterval(()=>{
-            
+
             let currentIndex=Number(i.toString().split("")[0]);
-    
-            
+
             if(i===100) currentIndex = 10; 
             if(stopwatch===i){
                 clearInterval(animation);
                 setCurrentPercent(percent)
-                console.log(percent)
-                console.log(currentPercent)
             }
+
             $("#waterTank").attr("src",tankImages[currentIndex]);
             $("#waterTank").css("transition","0.5s")
             setCurrentPercent(i)
             i+=10;
+
         },400)
         
     }
     
-   
  return(     
     <Card  className="m-3 p-3 card">
         <HeaderCard

@@ -6,12 +6,16 @@ import "./Dashboard.css";
 //IMG
 import notif from  "../../assets/IMG/notif.png"
 
-
+//Component
 import WaterConsumption from "../WaterConsuption/WaterConsumption";
 import ComponentDefault from "../ComponentDefault/ComponentDefault";
 import WaterTank from "../WaterTank/WaterTank";
-import LevelWaterTank from "../../services/route/LevelWaterTank";
 import Notification from "../Notification/Notification";
+
+//Services
+import LevelWaterTank from "../../services/route/LevelWaterTank"
+import RainWaterComsuption from "../../services/route/RainWaterComsuption"
+import RainWaterComsuptionByDebimeter from "../../services/route/RainWaterComsuptionByDebimeter"
 
 
 
@@ -24,6 +28,9 @@ export default function Dashboard(){
     })*/
     const [waterLevel]=LevelWaterTank();
     console.log(waterLevel)
+    const [rainWater]=RainWaterComsuption(1400,30000);
+    //const [rainWaterByDebimeter]=RainWaterComsuptionByDebimeter(1400);
+    //console.log(rainWaterByDebimeter)
   
 
  return(
@@ -31,6 +38,7 @@ export default function Dashboard(){
         <div className="p-3">
             <div id="dashbord-body" className="d-flex flex-wrap justify-content-between px-sm-0">
                 <WaterConsumption 
+                rainWater={rainWater}
                 />
                 <Notification 
                     number="1" 

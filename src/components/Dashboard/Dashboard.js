@@ -12,7 +12,7 @@ import ComponentDefault from "../ComponentDefault/ComponentDefault";
 import WaterTank from "../WaterTank/WaterTank";
 import LevelWaterTank from "../../services/route/LevelWaterTank";
 import Notification from "../Notification/Notification";
-
+import WaterQuality from "../WaterQuality/WaterQuality";
 
 
 
@@ -39,10 +39,7 @@ export default function Dashboard(){
                 <WaterTank 
                     percent={waterLevel}/>
                     
-                <ComponentDefault 
-                    title="Qualité de l'eau" 
-                    className="col-md-5 my-5"
-                />
+                <WaterQuality/>
               
             </div>           
         </div>

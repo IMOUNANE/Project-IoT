@@ -15,7 +15,10 @@ import Notification from "../Notification/Notification";
 //Services
 import LevelWaterTank from "../../services/route/LevelWaterTank"
 import RainWaterComsuption from "../../services/route/RainWaterComsuption"
-import RainWaterComsuptionByDebimeter from "../../services/route/RainWaterComsuptionByDebimeter"
+//import RainWaterComsuptionByDebimeter from "../../services/route/RainWaterComsuptionByDebimeter"
+
+
+import WaterQuality from "../WaterQuality/WaterQuality";
 
 
 
@@ -47,10 +50,7 @@ export default function Dashboard(){
                 <WaterTank 
                     percent={waterLevel}/>
                     
-                <ComponentDefault 
-                    title="Qualité de l'eau" 
-                    className="col-md-5 my-5"
-                />
+                <WaterQuality/>
               
             </div>           
         </div>

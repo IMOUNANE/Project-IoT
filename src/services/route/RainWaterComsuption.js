@@ -5,7 +5,7 @@ export default function RainWaterComsuption(minutes,sizeTank){
     //1  journée 1440 minutes 
     const [rainWater, setRainWater] = useState(0);
     useEffect(()=>{
-        axios.get(`http://193.70.84.157:3490/getFieldByTimeAndTopic/${minutes}/Sonde%20Niveau`).then((response)=>{
+        axios.get(`http://193.70.84.157:3490/getFieldByTimeAndTopic/${minutes}/Sonde_niveau`).then((response)=>{
         let res = response.data[0];   
         let percentEmpty = 0; 
         res.map((data,index)=>{

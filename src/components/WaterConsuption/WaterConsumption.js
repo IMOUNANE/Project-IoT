@@ -62,10 +62,11 @@ export default function WaterConsumption(props) {
            
      <div className="details d-flex flex-wrap">
        <WaterStat 
-       title={"Economie"} 
-       color="#2AAF42" 
-       illustration={drop} 
-       subTitle={[{text:`${Math.floor(rainWater/1000)} m3`}, {text:`${Math.floor(rainWater*0.003)} €`}]}/>
+          title={"Economie"} 
+          color="#2AAF42" 
+          illustration={drop} 
+          subTitle={[{text:`${Math.floor(rainWater/1000)} m3`}, {text:`${Math.floor(rainWater*0.003)} €`}]}
+        />
        <WaterStat title={"Eau de Pluie"} color="#3DC8E6" subTitle={[{text:`${Math.floor(rainWater)} L`}]}/>
        <WaterStat title={"Eau potable"} color="#1467A2" subTitle={[{text:`${Math.floor(totalComsuption-rainWater)} L`}]}/>
      </div>

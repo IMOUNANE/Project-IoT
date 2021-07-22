@@ -1,5 +1,5 @@
 //Import lié à react 
-import React, { useEffect } from "react"
+import React, { useEffect,useState } from "react"
 // STYLESHEET
 import "./Dashboard.css";
 
@@ -11,6 +11,7 @@ import WaterConsumption from "../WaterConsuption/WaterConsumption";
 import ComponentDefault from "../ComponentDefault/ComponentDefault";
 import WaterTank from "../WaterTank/WaterTank";
 import Notification from "../Notification/Notification";
+import DashboardHeader from "./DashboardHeader";
 
 //Services
 import LevelWaterTank from "../../services/route/LevelWaterTank"
@@ -20,7 +21,7 @@ import RainWaterComsuption from "../../services/route/RainWaterComsuption"
 
 import WaterQuality from "../WaterQuality/WaterQuality";
 
-
+import $ from "jquery";
 
 
 export default function Dashboard(){
@@ -30,15 +31,28 @@ export default function Dashboard(){
     console.log(result)
     })*/
     const [waterLevel]=LevelWaterTank();
-    console.log(waterLevel)
     const [rainWater]=RainWaterComsuption(1400,30000);
     //const [rainWaterByDebimeter]=RainWaterComsuptionByDebimeter(1400);
     //console.log(rainWaterByDebimeter)
-  
+    const [circuit,setCircuit]=useState(false)
+    useEffect(()=> {
+
+        if(circuit){
+            $(".dashboard").css("background-color","#E8F3EC")
+        }else{
+            $(".dashboard").css("background-color","#F56850")
+        }
+    },[circuit])
 
  return(
     <main className="dashboard">
-        <div className="p-3">
+        <div className="dashboard-content m-3">
+            <div id="dashboard-header">
+                <DashboardHeader
+                circuit={circuit}
+                setCircuit={setCircuit}
+                />
+            </div>
             <div id="dashbord-body" className="d-flex flex-wrap justify-content-between px-sm-0">
                 <WaterConsumption 
                 rainWater={rainWater}

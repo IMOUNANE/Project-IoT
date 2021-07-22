@@ -6,6 +6,12 @@
     font-family: 'AvenirRoman';
     src: url('./assets/fonts/AvenirLTStd-Roman.otf');
   }
+
+  @font-face {
+    font-weight: 300;
+    font-family: 'AvenirLight';
+    src: url('./assets/fonts/Avenir-Light.otf');
+  }
   
   @font-face {
     font-weight: normal;

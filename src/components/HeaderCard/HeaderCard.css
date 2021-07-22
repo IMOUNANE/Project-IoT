@@ -8,6 +8,12 @@
     font-family: "AvenirMedium";
 }
 
+.infoQuality{
+    font-size: 22px;
+    font-family: "AvenirMedium";
+    color: #01D88F;
+}
+
 .subtitle {
     font-size: 16px;
     font-family: "AvenirBook";

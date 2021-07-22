@@ -67,15 +67,15 @@ export default function WaterTank(){
     }
     
  return(     
-    <Card  className="m-3 p-3 card">
+    <Card  className="m-3 p-3 card waterTank-card">
         <HeaderCard
             title="Reservoir d'eau de pluie"
             subtitle="Details"
         />
-        <div className="p-5">
+        <div className="p-2">
            
-            <div className="d-flex flex-wrap justify-content-center my-5">
-                <div className="col-xl-6 col-lg-12 my-3 waterTank-container">
+            <div className="d-flex flex-wrap justify-content-around my-5">
+                <div className="my-3 waterTank-container">
                     <img id="waterTank" src={water_0}/>
                     <p className="percent">{percent+"%"}</p>
                 </div>

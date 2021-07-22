@@ -10,7 +10,7 @@ export default function WaterQuality(){
         axios.get(`/getAverageByRange/:date1/:date2/:sensor`).then((response)=>{
         let res = response.data[0];   
         let percentEmpty = 0; 
-        res.map((data,index)=>{
+        res.map((data,index) => {
             const value = data._value;
             if(index>0){
                 if(value>res[Number(index-1)]._value){

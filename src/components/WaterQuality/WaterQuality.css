@@ -1,5 +1,6 @@
-#WaterQuality{
+#WaterQuality {
     background-color: white;
+<<<<<<< HEAD
 }
 
 .chart-WaterQuality {
@@ -51,4 +52,23 @@ ul {
 
 .name-chimical {
     font-family: "AvenirBook";
+=======
+}
+
+@media (min-width: 1302px) {
+    .waterQuality-container {
+        position: absolute;
+        top: 0;
+    }
+  }
+
+
+.lineChart {
+    height: 100%;
+}
+
+.canvas {
+    width: 200px;
+    height: 200px;
+>>>>>>> add overlay on waterQuality component
 }

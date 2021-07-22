@@ -16,8 +16,8 @@ export  function WaterStat(props){
                     <h5 className="mt-2">{title}</h5>
                 </div>
              
-                <div className="d-flex flex-wrap col-md-12 justify-content-center"  >
-                {illustration && (
+                <div className="d-flex flex-wrap col-md-12 justify-content-center">
+                    {illustration && (
                     <div className="col-md-5">
                         <img src={illustration}/>
                     </div>

@@ -4,11 +4,10 @@ import React, { useEffect,useState } from "react"
 import "./Dashboard.css";
 
 //IMG
-import notif from  "../../assets/IMG/notif.png"
+
 
 //Component
 import WaterConsumption from "../WaterConsuption/WaterConsumption";
-import ComponentDefault from "../ComponentDefault/ComponentDefault";
 import WaterTank from "../WaterTank/WaterTank";
 import Notification from "../Notification/Notification";
 import DashboardHeader from "./DashboardHeader";
@@ -28,6 +27,7 @@ import $ from "jquery";
 export default function Dashboard(){
    
     const [waterLevel]=LevelWaterTank();
+<<<<<<< HEAD
    console.log(waterLevel)
 
   
@@ -35,6 +35,8 @@ export default function Dashboard(){
   
   
 
+=======
+>>>>>>> add overlay on waterQuality component
     const [circuit,setCircuit]=useState(true)
     
     useEffect(()=> {

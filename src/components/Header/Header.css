@@ -10,6 +10,9 @@
 /* .container-admin {
   margin: -15px !important;
 } */
+.dashboard-container {
+  margin-left: 16px;
+}
 
 .title {
   font-size: 22px;

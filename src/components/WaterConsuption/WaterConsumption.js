@@ -1,5 +1,5 @@
 //Import lié à react 
-import React,{useState,useEffect} from "react";
+import React from "react";
 import "./WaterConsumption.css"
 import {Doughnut} from 'react-chartjs-2';
 import { Card} from '@material-ui/core';
@@ -12,18 +12,22 @@ export default function WaterConsumption(props) {
   const totalComsuption = 500000;
   console.log(rainWater);
   const realWaterPercent = (rainWater/totalComsuption)*100
+<<<<<<< HEAD
   const [overlay,setOverlay] = useState(false);
   console.log(realWaterPercent)
+=======
+  // const [overlay,setOverlay] = useState(false);
+
+>>>>>>> add overlay on waterQuality component
     return(
       <Card id="WaterConsumption" className="m-3 p-3 card">
         <HeaderCard
           title="Consommation d'eau"
           subtitle="Details"
-          setOverlay={setOverlay}
-          overlay={overlay}
-          addButton={true}
+          // setOverlay={setOverlay}
+          // overlay={overlay}
+          // addButton={true}
         />
-    {!overlay ? (
       <div className="p-3">
         <div className="stat-water-comsumption d-flex justify-content-around align-items-center p-3">
          <div className="col-md-4 mb-4">
@@ -38,8 +42,7 @@ export default function WaterConsumption(props) {
                      'rgba(20, 103, 162, 1)',
                    ],
                  }
-               ],
-               
+               ],   
                
              }}
            />
@@ -72,9 +75,7 @@ export default function WaterConsumption(props) {
      </div>
          
     </div>
-    ) : (
-        <div>hello</div>
-    )}
+        
     </Card>
    )
   }

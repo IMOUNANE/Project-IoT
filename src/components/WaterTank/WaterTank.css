@@ -1,3 +1,7 @@
+.waterTank-card {
+    height: 400px;
+}
+
 .waterTank-container {
     position: relative;
 }

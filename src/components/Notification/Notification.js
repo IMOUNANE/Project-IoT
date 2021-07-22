@@ -8,7 +8,7 @@ export default function Noctification(props) {
     const{number, cause} =props
     
     return(
-        <Card className="m-3 p-3 card">
+        <Card className="m-3 p-3 card notification-card">
             <HeaderCard
                 title="Notifications"
                 subtitle="Details"

@@ -1,12 +1,14 @@
 //Import lié à react 
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
+import {Line} from 'react-chartjs-2';
 import { Card} from '@material-ui/core';
 import HeaderCard from "../HeaderCard/HeaderCard";
 import "./WaterQuality.css";
 import {Chart} from "chart.js";
+import OverlayWaterQuality from "../OverlayWaterQuality/OverlayWaterQuality"
 export default function WaterQuality(props){
-    const {chimicalData, qualityWater, qualityValue}=props;
-
+    const {title,className}=props;
+    const [overlay,setOverlay] = useState(false);
     const dayLabels = () => {
         let days = []
         let months = 32;
@@ -100,76 +102,39 @@ export default function WaterQuality(props){
         }
     }
 
-    useEffect(() => {
-        const ctx = document.getElementById("myChart");
-        new Chart(ctx, {
-            type: "line",
-            data: data, 
-            options: options,
-        });
-    },[])
+    // useEffect(() => {
+    //     const ctx = document.getElementById("myChart");
+    //     new Chart(ctx, {
+    //         type: "line",
+    //         data: data, 
+    //         options: options, 
+    //     });
+    //     console.log(overlay);
+    // },[])
 
     return(
-        <Card id="WaterQuality" className="m-3 p-3 card">
+        <Card id="WaterQuality" className="m-3 p-3 card waterQuality-container">
             <HeaderCard
                 title="Qualité de l’eau :"
                 infoQuality="normale"
                 subtitle="Details"
+                setOverlay={setOverlay}
+                overlay={overlay}
+                addButton={true}
             />
-
-            <div className="chart-WaterQuality" >
-                <div className="d-flex justify-content-start">
-                        <span className="mgData">mg/L</span>
-                </div>
-                <canvas id="myChart" width="300" height="300"></canvas> 
-                <div className="d-flex justify-content-end dayData">
-                    <span>Jours</span>
-                </div>
-            </div>
-
-            <div className="chimical-container">
-            <div className='d-flex justify-content-end'>
-                <h2 className='title-reference-chimical'>Valeurs de référence</h2>
-            </div>
-
-            <div className='d-flex flex-row justify-content-between'>
-                <div className='d-flex flex-row'>
-                    <div className='name-chimical'>
-                        <ul>
-                            <li>Sulfate:</li>
-                            <li>Chlorure:</li>
-                            <li>Sodium:</li>
-                            <li>Potassium:</li>
-                            <li>Nitrate:</li>
-                            <li>pH</li>
-                        </ul>
-                    </div>
-                    <div  className='value-chimical'>
-                        <ul>
-                            <li>9,5 mg/L</li>
-                            <li>9 mg/L</li>
-                            <li>1,6 mg/L</li>
-                            <li>0,8 mg/L</li>
-                            <li>1,6 mg/L</li>
-                            <li>5 mg/L</li>
-                        </ul>
-                    </div>
-                </div>
-                <div  className='d-flex justify-content-flex-end value-chimical-reference'>
-                   <div className='text-end'>
-                   <ul>
-                        <li>8 à 10</li>
-                        <li>7 à 10</li>
-                        <li>1,2 à 1,8</li>
-                        <li>0,8 à 1</li>
-                        <li>1,6 à 4</li>
-                        <li>5 à 7</li>
-                    </ul>
-                   </div>
-                </div>
-            </div>  
-            </div>
+{overlay ? ( <OverlayWaterQuality
+                    subtitle="Valeurs de référence"
+                />
+             
+              ) : (
                 
+                <div className="test" >
+               <Line
+                data={data}
+                options={options}
+               />
+            </div>  
+            )}   
         </Card>
     )
 }

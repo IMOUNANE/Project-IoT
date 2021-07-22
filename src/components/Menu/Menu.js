@@ -9,14 +9,7 @@ function Menu(){
         <div className="lateralBar col-lg-3 col-xl-2">
             <nav className="orginalNav d-flex flex-column align-items-center">
                 <NavLink 
-                    exact
                     to="/" 
-                    className="link-menu"//{selectedMenu === 0?"link-menu active":"link-menu"}
-                >
-                    Page Test
-                </NavLink>
-                <NavLink 
-                    to="/dashboard" 
                     className="link-menu"//{selectedMenu === 1?"link-menu active":"link-menu"}
                 >
                    Tableau de bord

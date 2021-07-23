@@ -21,6 +21,7 @@ import $ from "jquery";
 
 export default function Dashboard(){
    
+    const [alert] = AlertWater();
     const [waterLevel]=LevelWaterTank();
 <<<<<<< HEAD
    console.log(waterLevel)
@@ -34,6 +35,7 @@ export default function Dashboard(){
 >>>>>>> add overlay on waterQuality component
     const [circuit,setCircuit]=useState(true)
     
+    
     useEffect(()=> {
         if(circuit){
             $(".dashboard").css("background-color","#E8F3EC")
@@ -44,6 +46,7 @@ export default function Dashboard(){
         
     },[circuit])
 
+    console.log(alert);
     return(
         <main className="dashboard">
             <div className="dashboard-content m-5">
@@ -58,15 +61,16 @@ export default function Dashboard(){
                         percent={waterLevel}
                     /> 
                      <Notification 
-                        number="1" 
-                        cause="Qualité de l'eau mauvaise"
+                        number="0" 
+                        cause="Aucune anomalie(s)"
                     />
                     <WaterConsumption 
-                    rainWater={rainWater}
+                    rainWater={60}
                     /> 
                     <WaterQuality/>
                 
                 </div>           
+<<<<<<< HEAD
             </div>
             <div id="dashbord-body" className="d-flex flex-wrap justify-content-between px-sm-0">
                 <WaterConsumption 
@@ -81,6 +85,9 @@ export default function Dashboard(){
                 <WaterQuality/>
               
             </div>           
+=======
+            </div>    
+>>>>>>> update
     </main>
  )
 }

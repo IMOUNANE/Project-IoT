@@ -9,6 +9,7 @@ import HeaderCard from "../HeaderCard/HeaderCard";
 
 export default function WaterConsumption(props) {
   const {rainWater}=props;
+<<<<<<< HEAD
   const totalComsuption = 500000;
   console.log(rainWater);
   const realWaterPercent = (rainWater/totalComsuption)*100
@@ -16,6 +17,10 @@ export default function WaterConsumption(props) {
   const [overlay,setOverlay] = useState(false);
   console.log(realWaterPercent)
 =======
+=======
+  const totalComsuption = 1000000;
+  const realWaterPercent = (rainWater/totalComsuption).toFixed(2)*100
+>>>>>>> update
   // const [overlay,setOverlay] = useState(false);
 
 >>>>>>> add overlay on waterQuality component

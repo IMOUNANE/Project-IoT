@@ -23,12 +23,13 @@ export default function WaterTank(){
     const tankImages=[water_0,water_10,water_20,water_30,water_40,water_50,water_60,water_70,water_80,water_90,water_100]
     const [currentRainWater,setCurrentRainWater]=CurrentRainWaterComsuption(300);
     const currentData = [
-        {text:"Capacité",value:"30 m3"},
+        {text:"Capacité",value:"300 m3"},
         {text:"Niveau d'eau ",value:` ${currentRainWater} L`},
     ];
    
     console.log(currentRainWater)
-    const percent = Math.round(currentRainWater/30000)
+    const percent = (currentRainWater/300000).toFixed(2)*100
+    console.log(percent);
     useEffect(()=>{
         renderImg(percent)
         const test=()=>{

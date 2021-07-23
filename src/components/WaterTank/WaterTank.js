@@ -17,13 +17,12 @@ import water_100 from "../../assets/IMG/water_100.png";
 import $ from "jquery"
 
 export default function WaterTank(props){
-    const {percent}=props;
+    const {percent,data}=props;
     const [currentPercent,setCurrentPercent] = useState(0)
     const tankImages=[water_0,water_10,water_20,water_30,water_40,water_50,water_60,water_70,water_80,water_90,water_100]
-    const data = [
-        {text:"Capacité",value:"30T"},
-        {text:"Remplissage",value:"20T"},
-        {text:"Capacité restante",value:"10T"}
+    const currentData = [
+        {text:"Capacité",value:"30 m3"},
+        {text:"Niveau d'eau",value:`${data} L`},
     ];
 
     useEffect(()=>{
@@ -63,10 +62,10 @@ export default function WaterTank(props){
             <div className="d-flex flex-wrap justify-content-center my-5">
                 <div className="col-xl-6 col-lg-12 my-3 waterTank-container">
                     <img id="waterTank" src={water_0}/>
-                    <p className="percent">{currentPercent+"%"}</p>
+                    <p className="percent">{percent+"%"}</p>
                 </div>
                 <div className="col-xl-6 col-lg-12 p-3">
-                  {data.map((content)=>{
+                  {currentData.map((content)=>{
                       return(
                         <div className="d-flex justify-content-between">
                             <p className="content-text" >{content.text}</p>

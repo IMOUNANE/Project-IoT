@@ -60,7 +60,9 @@ export default function Dashboard(){
                     cause="Qualité de l'eau mauvaise"
                 />
                 <WaterTank 
-                    percent={waterLevel}/>
+                    percent={Math.round(currentRainWater/30000)}
+                    data={currentRainWater}
+                />
                     
                 <WaterQuality/>
               

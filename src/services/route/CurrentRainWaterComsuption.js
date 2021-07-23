@@ -9,7 +9,7 @@ export default function CurrentRainWaterComsuption(minutes){
         let res = response.data[0];  
         let result = 0;
         const value=res[res.length-1]._value;
-        setCurrentRainWater(value);
+        setCurrentRainWater(Math.floor(value));
     })
     },[])
     return [currentRainWater, setCurrentRainWater];

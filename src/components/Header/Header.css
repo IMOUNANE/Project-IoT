@@ -1,15 +1,6 @@
-/* .dropdown-menu {
-  right: 0 !important;
-  margin-top: 200px !important;
-  top: 50px !important;
-  left: auto !important;
-  z-index: 300 !important;
-  transform: none !important;
-} */
-
-/* .container-admin {
-  margin: -15px !important;
-} */
+.dashboard-container {
+  margin-left: 34px;
+}
 
 .title {
   font-size: 22px;

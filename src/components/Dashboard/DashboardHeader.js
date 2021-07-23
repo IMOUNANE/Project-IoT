@@ -1,5 +1,5 @@
 //Import lié à react 
-import React,{useState} from "react"
+import React,{useState} from "react";
 
 //Addons
 import Button from '@material-ui/core/Button';
@@ -33,7 +33,7 @@ export default function DashboardHeader(props){
 
 
  return(
-    <div className="d-flex justify-content-start p-5">
+    <div className="d-flex justify-content-start p-3">
         <Button
             id="circuit"
             variant="contained"

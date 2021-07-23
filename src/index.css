@@ -85,7 +85,7 @@ nav a:hover {
 
 main {
   width: 83.33%;
-  margin-left: 16.6667%;
+  margin-left: 28%;
   margin-top: 61px;
   min-height: 100vh;
   overflow: hidden;
@@ -94,5 +94,11 @@ main {
 @media (min-width: 1400px) {
   .card {
     width: 38vw;
+  }
+}
+
+@media (min-width: 1203px) {
+  main  {
+    margin-left: 16%;
   }
 }

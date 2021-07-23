@@ -1,0 +1,18 @@
+.values-container {
+    width: 200px;
+}
+
+.measurement {
+    margin-right: 4px;
+    font-size: 18px;
+}
+
+.value-chimical {
+    font-family: "AvenirHeavy";
+    font-size: 18px;
+}
+
+.referenceValue {
+    font-size: 14px;
+    font-family: "AvenirLight";
+}

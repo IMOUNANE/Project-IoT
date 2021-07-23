@@ -1,54 +1,16 @@
-#WaterQuality{
-    background-color: white;
+.lineChart {
+    height: 100%;
 }
 
-.chart-WaterQuality {
-    margin: 5% 10%;
+.canvas {
+    width: 200px;
+    height: 200px;
 }
 
-.mgData,
-.dayData {
-font-family: "AvenirLight";
-font-size: 12px;
-}
+/* @media (min-width: 1302px) {
+    .waterQuality-container {
+        position: absolute;
+        top: 0;
+    }
+} */
 
-.mgData {
-    transform: translate(-10px, -10px);
-}
-
-.dayData {
-    position: absolute;
-    right: 0;
-    transform: translate(-38px, -53px);
-}
-
-.chimical-container {
-    margin: 10%;
-}
-
-ul {
-    list-style: none;
-}
-
-.title-reference-chimical, 
-.value-chimical-reference {
-        font-size: 14px;
-        font-family: "AvenirLight";
-}
-
-.value-chimical-reference {
-    line-height: 27px;
-}
-
-.name-chimical,
-.value-chimical {
-    font-size: 18px;
-}
-
-.value-chimical {
-    font-family: "AvenirHeavy";
-}
-
-.name-chimical {
-    font-family: "AvenirBook";
-}

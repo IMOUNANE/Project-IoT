@@ -1,5 +1,6 @@
 .link-menu{
   padding: 12.5px 40px 12.5px 40px;
+  font-size: 18px;
 }
 .sub-link.active .subMenu {
   transition: 0.2s;

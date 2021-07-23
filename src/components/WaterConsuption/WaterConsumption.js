@@ -1,5 +1,5 @@
 //Import lié à react 
-import React,{useState,useEffect} from "react";
+import React from "react";
 import "./WaterConsumption.css"
 import {Doughnut} from 'react-chartjs-2';
 import { Card} from '@material-ui/core';
@@ -10,21 +10,21 @@ import HeaderCard from "../HeaderCard/HeaderCard";
 export default function WaterConsumption(props) {
   const {rainWater}=props;
   const totalComsuption = 500000;
+  const realWaterPercent = (rainWater/totalComsuption).toFixed(2)*100
   console.log(rainWater);
-  const realWaterPercent = (rainWater/totalComsuption)*100
-  const [overlay,setOverlay] = useState(false);
+  //const [overlay,setOverlay] = useState(false);
   console.log(realWaterPercent)
+
+  // const [overlay,setOverlay] = useState(false);
+
     return(
-      <Card id="WaterConsumption" className="m-3 p-3 card">
+      <Card id="WaterConsumption" className="m-3 p-2 card">
         <HeaderCard
           title="Consommation d'eau"
           subtitle="Details"
-          setOverlay={setOverlay}
-          overlay={overlay}
-          addButton={true}
         />
-    {!overlay ? (
-      <div className="p-3">
+
+      <div className="p-1">
         <div className="stat-water-comsumption d-flex justify-content-around align-items-center p-3">
          <div className="col-md-4 mb-4">
            <Doughnut
@@ -38,8 +38,7 @@ export default function WaterConsumption(props) {
                      'rgba(20, 103, 162, 1)',
                    ],
                  }
-               ],
-               
+               ],   
                
              }}
            />
@@ -64,17 +63,15 @@ export default function WaterConsumption(props) {
      <div className="details d-flex flex-wrap">
        <WaterStat 
           title={"Conso. général"} 
-          color="#2AAF42" 
+          color="#1467A2" 
           subTitle={[{text:`${Math.floor(rainWater/1000)} m3`}]}
         />
-       <WaterStat title={"Eau de Pluie"} color="#3DC8E6" subTitle={[{text:`${Math.floor(rainWater)} L`}]}/>
-       <WaterStat title={"Eau potable"} color="#1467A2" subTitle={[{text:`${Math.floor(totalComsuption-rainWater)} L`}]}/>
+       <WaterStat title={"Eau de Pluie"}  color="#2AAF42" subTitle={[{text:`${Math.floor(rainWater)} L`}]}/>
+       <WaterStat title={"Eau potable"}  color="#3DC8E6" subTitle={[{text:`${Math.floor(totalComsuption-rainWater)} L`}]}/>
      </div>
          
     </div>
-    ) : (
-        <div>hello</div>
-    )}
+        
     </Card>
    )
   }

@@ -23,12 +23,13 @@ export default function WaterTank(){
     const tankImages=[water_0,water_10,water_20,water_30,water_40,water_50,water_60,water_70,water_80,water_90,water_100]
     const [currentRainWater,setCurrentRainWater]=CurrentRainWaterComsuption(300);
     const currentData = [
-        {text:"Capacité",value:"30 m3"},
+        {text:"Capacité",value:"300 m3"},
         {text:"Niveau d'eau ",value:` ${currentRainWater} L`},
     ];
    
     console.log(currentRainWater)
-    const percent = Math.round(currentRainWater/30000)
+    const percent = (currentRainWater/300000).toFixed(2)*100
+    console.log(percent);
     useEffect(()=>{
         renderImg(percent)
         const test=()=>{
@@ -67,15 +68,15 @@ export default function WaterTank(){
     }
     
  return(     
-    <Card  className="m-3 p-3 card">
+    <Card  className="m-3 p-3 card waterTank-card">
         <HeaderCard
             title="Reservoir d'eau de pluie"
             subtitle="Details"
         />
-        <div className="p-5">
+        <div className="p-2">
            
-            <div className="d-flex flex-wrap justify-content-center my-5">
-                <div className="col-xl-6 col-lg-12 my-3 waterTank-container">
+            <div className="d-flex flex-wrap justify-content-around my-5">
+                <div className="my-3 waterTank-container">
                     <img id="waterTank" src={water_0}/>
                     <p className="percent">{percent+"%"}</p>
                 </div>
@@ -92,6 +93,6 @@ export default function WaterTank(){
                 </div>
             </div>
         </div>
-    </Card>
- )
+        </Card>
+    )
 }

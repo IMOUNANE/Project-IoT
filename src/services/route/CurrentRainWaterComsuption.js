@@ -7,7 +7,6 @@ export default function CurrentRainWaterComsuption(minutes){
     useEffect(()=>{
         axios.get(`http://193.70.84.157:3490/getFieldByTimeAndTopic/${minutes}/Sonde_niveau`).then((response)=>{
         let res = response.data[0];  
-        let result = 0;
         const value=res[res.length-1]._value;
         setCurrentRainWater(Math.floor(value));
     })

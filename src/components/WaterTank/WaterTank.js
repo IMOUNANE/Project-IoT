@@ -15,18 +15,33 @@ import water_80 from "../../assets/IMG/water_80.png";
 import water_90 from "../../assets/IMG/water_90.png";
 import water_100 from "../../assets/IMG/water_100.png";
 import $ from "jquery"
+import axios from "axios";
+import CurrentRainWaterComsuption from "../../services/route/CurrentRainWaterComsuption"
 
-export default function WaterTank(props){
-    const {percent,data}=props;
+export default function WaterTank(){
     const [currentPercent,setCurrentPercent] = useState(0)
     const tankImages=[water_0,water_10,water_20,water_30,water_40,water_50,water_60,water_70,water_80,water_90,water_100]
+    const [currentRainWater,setCurrentRainWater]=CurrentRainWaterComsuption(300);
     const currentData = [
         {text:"Capacité",value:"30 m3"},
-        {text:"Niveau d'eau",value:`${data} L`},
+        {text:"Niveau d'eau ",value:` ${currentRainWater} L`},
     ];
-
+   
+    console.log(currentRainWater)
+    const percent = Math.round(currentRainWater/30000)
     useEffect(()=>{
         renderImg(percent)
+        const test=()=>{
+            setInterval(()=>{
+                axios.get(`http://193.70.84.157:3490/getFieldByTimeAndTopic/60/Sonde_niveau`).then((response)=>{
+                    let res = response.data[0];  
+                    const value=res[res.length-1]._value;
+                    setCurrentRainWater(Math.floor(value));
+                })
+            },300000)
+        }
+        test()
+        return ()=>clearTimeout(test)
     },[percent,setCurrentPercent])
 
     const renderImg=(percent)=>{

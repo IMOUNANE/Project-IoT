@@ -28,9 +28,12 @@ import $ from "jquery";
 export default function Dashboard(){
    
     const [waterLevel]=LevelWaterTank();
-    const [currentRainWater]=CurrentRainWaterComsuption(300);
-    console.log(currentRainWater)
-    const[qualityWater] = QualityWaterValues();
+   
+
+  
+       
+  
+  
 
     const [circuit,setCircuit]=useState(true)
     
@@ -40,6 +43,8 @@ export default function Dashboard(){
         }else{
             $(".dashboard").css("background-color","#F56850")
         }
+       
+        
     },[circuit])
 
  return(
@@ -59,10 +64,7 @@ export default function Dashboard(){
                     number="1" 
                     cause="Qualité de l'eau mauvaise"
                 />
-                <WaterTank 
-                    percent={Math.round(currentRainWater/30000)}
-                    data={currentRainWater}
-                />
+                <WaterTank />
                     
                 <WaterQuality/>
               

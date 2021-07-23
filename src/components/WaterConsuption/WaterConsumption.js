@@ -9,10 +9,11 @@ import HeaderCard from "../HeaderCard/HeaderCard";
 
 export default function WaterConsumption(props) {
   const {rainWater}=props;
-  const totalComsuption = 1000000;
+  const totalComsuption = 500000;
+  console.log(rainWater);
   const realWaterPercent = (rainWater/totalComsuption)*100
   const [overlay,setOverlay] = useState(false);
-
+  console.log(realWaterPercent)
     return(
       <Card id="WaterConsumption" className="m-3 p-3 card">
         <HeaderCard
@@ -62,10 +63,9 @@ export default function WaterConsumption(props) {
            
      <div className="details d-flex flex-wrap">
        <WaterStat 
-          title={"Economie"} 
+          title={"Conso. général"} 
           color="#2AAF42" 
-          illustration={drop} 
-          subTitle={[{text:`${Math.floor(rainWater/1000)} m3`}, {text:`${Math.floor(rainWater*0.003)} €`}]}
+          subTitle={[{text:`${Math.floor(rainWater/1000)} m3`}]}
         />
        <WaterStat title={"Eau de Pluie"} color="#3DC8E6" subTitle={[{text:`${Math.floor(rainWater)} L`}]}/>
        <WaterStat title={"Eau potable"} color="#1467A2" subTitle={[{text:`${Math.floor(totalComsuption-rainWater)} L`}]}/>

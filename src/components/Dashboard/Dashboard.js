@@ -28,7 +28,7 @@ import $ from "jquery";
 export default function Dashboard(){
    
     const [waterLevel]=LevelWaterTank();
-   
+   console.log(waterLevel)
 
   
        
@@ -58,7 +58,7 @@ export default function Dashboard(){
             </div>
             <div id="dashbord-body" className="d-flex flex-wrap justify-content-between px-sm-0">
                 <WaterConsumption 
-                rainWater={60}
+                rainWater={waterLevel}
                 />
                 <Notification 
                     number="1" 

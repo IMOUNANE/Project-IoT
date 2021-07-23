@@ -1,4 +1,9 @@
 .dashboard{
+    /* display: grid;
+    grid-template: "nav" "head" auto
+                    "nav" "main" 2ch
+                    "nav" "main" 1em/ 20% 20px 1fr; */
+
     background-color: #E8F3EC;
 }
 .dashboard-content{
@@ -6,6 +11,7 @@
 }
 #dashboard-header{
     background-color: white;
+    /* grid-area: head; */
 }
 #dashbord-body{
     background-color: white;

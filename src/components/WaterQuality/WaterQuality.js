@@ -1,13 +1,25 @@
 //Import lié à react 
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import {Line} from 'react-chartjs-2';
 import { Card} from '@material-ui/core';
 import HeaderCard from "../HeaderCard/HeaderCard";
+import OverlayWaterQuality from "../OverlayWaterQuality/OverlayWaterQuality";
+import QualityWaterState from "../../services/route/WaterState";
+import PotassiumValueChart from "../../services/route/PotassiumValueChart"
+import PhValueChart from "../../services/route/PhValueChart"
+import SodiumValueChart from "../../services/route/SodiumValueChart"
+import ChlorureValueChart from "../../services/route/ChlorureValueChart"
+import SulfateValueChart from "../../services/route/SulfateValueChart"
 import "./WaterQuality.css";
-import {Chart} from "chart.js";
-import OverlayWaterQuality from "../OverlayWaterQuality/OverlayWaterQuality"
-export default function WaterQuality(props){
-    const {title,className}=props;
+
+export default function WaterQuality(props) {
+
+    const [waterState] = QualityWaterState();
+    const [valuePotassiumChart] = PotassiumValueChart();
+    const [valuePhChart] = PhValueChart();
+    const [valueSodiumChart] = SodiumValueChart()
+    const [valueChlorureChart] = ChlorureValueChart()
+    const [valueSulfateChart] = SulfateValueChart()
     const [overlay,setOverlay] = useState(false);
     const dayLabels = () => {
         let days = []
@@ -17,15 +29,18 @@ export default function WaterQuality(props){
         }
         return days 
     }
-    
+
+    console.log(valuePhChart);
+
+
     let data = {
         labels: dayLabels(),
         datasets: [
             {
-                label: 'PH',
-                data: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 7, 7, 7],
-                backgroundColor: 'rgba(0, 143, 251, 0.09)',
+                label: 'Potassium',
+                data: valuePotassiumChart,
                 borderColor: 'rgb(0, 143, 251,1)',
+                backgroundColor: 'transparent',
                 borderWidth: 3,
                 fill:'start',
                 lineTension: 0.4, 
@@ -33,10 +48,43 @@ export default function WaterQuality(props){
                 hitRadius: 12
             },
             {
-                label: 'Qualité globale de l’eau',
-                data: [12, 13, 3, 5, 7, 7, 7, 7, 7, 7, 7, 7, 5, 2, 3, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 11, 11, 11, 11, 12, 12, 12, 12, 12, 12, 12],
-                backgroundColor: 'rgba(232, 252, 246, 1)',
+                label: 'PH',
+                data: valuePhChart,
                 borderColor: 'rgb(0, 227, 150,1)',
+                backgroundColor: 'transparent',
+                borderWidth: 3,
+                fill:'start',
+                lineTension: 0.4, 
+                pointRadius: 0,
+                hitRadius: 12,
+            },
+            {
+                label: 'Sodium',
+                data: valueSodiumChart,
+                borderColor: 'rgba(244, 151, 218, 1)',
+                backgroundColor: 'transparent',
+                borderWidth: 3,
+                fill:'start',
+                lineTension: 0.4, 
+                pointRadius: 0,
+                hitRadius: 12,
+            },
+            {
+                label: 'Chlorure',
+                data: valueChlorureChart,
+                borderColor: 'rgba(251, 216, 127, 1)',
+                backgroundColor: 'transparent',
+                borderWidth: 3,
+                fill:'start',
+                lineTension: 0.4, 
+                pointRadius: 0,
+                hitRadius: 12,
+            },
+            {
+                label: 'Sulfate',
+                data: valueSulfateChart,
+                borderColor: 'rgba(0, 236, 251, 1)',
+                backgroundColor: 'transparent',
                 borderWidth: 3,
                 fill:'start',
                 lineTension: 0.4, 
@@ -102,38 +150,27 @@ export default function WaterQuality(props){
         }
     }
 
-    // useEffect(() => {
-    //     const ctx = document.getElementById("myChart");
-    //     new Chart(ctx, {
-    //         type: "line",
-    //         data: data, 
-    //         options: options, 
-    //     });
-    //     console.log(overlay);
-    // },[])
-
     return(
-        <Card id="WaterQuality" className="m-3 p-3 card waterQuality-container">
+        <Card id="WaterQuality" className="m-3 p-1 card waterQuality-container">
             <HeaderCard
                 title="Qualité de l’eau :"
-                infoQuality="normale"
+                infoQuality={true}
                 subtitle="Details"
+                state= {waterState}
                 setOverlay={setOverlay}
                 overlay={overlay}
                 addButton={true}
             />
-{overlay ? ( <OverlayWaterQuality
-                    subtitle="Valeurs de référence"
-                />
-             
-              ) : (
-                
-                <div className="test" >
-               <Line
-                data={data}
-                options={options}
-               />
-            </div>  
+            {overlay ? ( <OverlayWaterQuality
+                subtitle="Valeurs de référence"
+            />
+            ) : (      
+                <div className="chart-container">
+                    <Line
+                        data={data}
+                        options={options}
+                    />
+                </div>  
             )}   
         </Card>
     )

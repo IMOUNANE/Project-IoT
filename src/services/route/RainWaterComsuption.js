@@ -1,13 +1,11 @@
-import React,{useEffect,useState} from "react";
+import {useEffect,useState} from "react";
 import axios from "axios";
 
-export default function WaterQuality() {
+export default function RainWaterComsuption(minutes,sizeTank){
     //1  journée 1440 minutes 
     const [rainWater, setRainWater] = useState(0);
     useEffect(()=>{
-        const date = new Date();
- 
-        axios.get(`/getAverageByRange/:date1/:date2/:sensor`).then((response)=>{
+        axios.get(`http://193.70.84.157:3490/getFieldByTimeAndTopic/${minutes}/Sonde_niveau`).then((response)=>{
         let res = response.data[0];   
         let percentEmpty = 0; 
         res.map((data,index) => {

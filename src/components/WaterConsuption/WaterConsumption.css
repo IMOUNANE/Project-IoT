@@ -1,10 +1,11 @@
 #WaterConsumption{
     background-color: white;
+    width: 530px;
 }
 
-.water-stat-title h5{
+.water-stat-title{
     color:white;
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
 }
 

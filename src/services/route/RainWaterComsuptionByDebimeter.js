@@ -24,3 +24,4 @@ export default function RainWaterComsuptionByDebimeter(minutes){
     return [rainWaterByDebimeter, setRainWaterByDebimeter];
 
 }
+

@@ -12,17 +12,12 @@ export  function WaterStat(props){
     return(
         <div>
             <div className="d-flex flex-wrap justify-content-center p-3 m-2" style={style}>
-                <div className=" water-stat-title align-items-center col-md-12">
-                    <h5 className="mt-2">{title}</h5>
+                <div className=" align-items-center col-md-12">
+                    <h1 className="mt-2 water-stat-title">{title}</h1>
                 </div>
              
                 <div className="d-flex flex-wrap col-md-12 justify-content-center">
-                    {illustration && (
-                    <div className="col-md-5">
-                        <img src={illustration}/>
-                    </div>
-                )}
-                    <div clasName={illustration ? "col-md-5" : "col-md-12" }>
+                    <div clasName="col-md-12">
                     {subTitle && (subTitle.map((content) => {
                         return(
                             <>

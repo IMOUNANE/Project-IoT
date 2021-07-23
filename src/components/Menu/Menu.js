@@ -2,7 +2,8 @@ import React from "react"
 import { NavLink } from "react-router-dom";
 import { withRouter } from "react-router";
 import "./Menu.css";
-function Menu(){
+
+function Menu() {
 
  return(
     <div>

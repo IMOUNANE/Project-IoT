@@ -92,6 +92,6 @@ export default function WaterTank(){
                 </div>
             </div>
         </div>
-    </Card>
- )
+        </Card>
+    )
 }

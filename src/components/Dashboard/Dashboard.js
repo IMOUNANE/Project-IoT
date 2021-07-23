@@ -23,16 +23,6 @@ export default function Dashboard(){
    
     const [alert] = AlertWater();
     const [waterLevel]=LevelWaterTank();
-<<<<<<< HEAD
-   console.log(waterLevel)
-
-  
-       
-  
-  
-
-=======
->>>>>>> add overlay on waterQuality component
     const [circuit,setCircuit]=useState(true)
     
     
@@ -65,29 +55,11 @@ export default function Dashboard(){
                         cause="Aucune anomalie(s)"
                     />
                     <WaterConsumption 
-                    rainWater={60}
                     /> 
                     <WaterQuality/>
                 
                 </div>           
-<<<<<<< HEAD
-            </div>
-            <div id="dashbord-body" className="d-flex flex-wrap justify-content-between px-sm-0">
-                <WaterConsumption 
-                rainWater={waterLevel}
-                />
-                <Notification 
-                    number="1" 
-                    cause="Qualité de l'eau mauvaise"
-                />
-                <WaterTank />
-                    
-                <WaterQuality/>
-              
-            </div>           
-=======
             </div>    
->>>>>>> update
     </main>
  )
 }

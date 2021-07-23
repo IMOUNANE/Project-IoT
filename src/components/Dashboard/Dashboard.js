@@ -15,9 +15,10 @@ import DashboardHeader from "./DashboardHeader";
 
 //Services
 import LevelWaterTank from "../../services/route/LevelWaterTank"
-import RainWaterComsuption from "../../services/route/RainWaterComsuption"
-//import RainWaterComsuptionByDebimeter from "../../services/route/RainWaterComsuptionByDebimeter"
-
+import CurrentRainWaterComsuption from "../../services/route/CurrentRainWaterComsuption"
+import AlertWater from "../../services/route/AlertWater";
+import QualityWaterValues from "../../services/route/QualityWaterValues"
+import axios from "axios";
 
 import WaterQuality from "../WaterQuality/WaterQuality";
 
@@ -25,18 +26,15 @@ import $ from "jquery";
 
 
 export default function Dashboard(){
-   /* axios.get("http://193.70.84.157:3490/getFieldByTime/112").then((response)=>{
-    let res=response.data[0];    
-    const result=res.map((data)=> data._value)
-    console.log(result)
-    })*/
+   
     const [waterLevel]=LevelWaterTank();
-    const [rainWater]=RainWaterComsuption(1400,30000);
-    //const [rainWaterByDebimeter]=RainWaterComsuptionByDebimeter(1400);
-    //console.log(rainWaterByDebimeter)
-    const [circuit,setCircuit]=useState(false)
-    useEffect(()=> {
+    const [currentRainWater]=CurrentRainWaterComsuption(300);
+    console.log(currentRainWater)
+    const[qualityWater] = QualityWaterValues();
 
+    const [circuit,setCircuit]=useState(true)
+    
+    useEffect(()=> {
         if(circuit){
             $(".dashboard").css("background-color","#E8F3EC")
         }else{
@@ -55,7 +53,7 @@ export default function Dashboard(){
             </div>
             <div id="dashbord-body" className="d-flex flex-wrap justify-content-between px-sm-0">
                 <WaterConsumption 
-                rainWater={rainWater}
+                rainWater={60}
                 />
                 <Notification 
                     number="1" 

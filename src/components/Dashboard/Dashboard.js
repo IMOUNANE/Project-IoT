@@ -55,6 +55,7 @@ export default function Dashboard(){
                         cause="Aucune anomalie(s)"
                     />
                     <WaterConsumption 
+                        rainWater={waterLevel}
                     /> 
                     <WaterQuality/>
                 
